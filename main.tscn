@@ -1,0 +1,228 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://main.gd" type="Script" id=1]
+[ext_resource path="res://login.gd" type="Script" id=2]
+[ext_resource path="res://create_account.gd" type="Script" id=3]
+
+[node name="Window" type="Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -125.0
+margin_top = -150.0
+margin_right = 125.0
+margin_bottom = 150.0
+grow_horizontal = 2
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LoginForm" type="VBoxContainer" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 15.0
+margin_top = 15.0
+margin_right = -15.0
+margin_bottom = -15.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Header" type="Label" parent="LoginForm"]
+margin_right = 220.0
+margin_bottom = 70.0
+rect_min_size = Vector2( 0, 70 )
+size_flags_vertical = 0
+text = "Login to Transaticka"
+align = 1
+valign = 1
+
+[node name="InputBox" type="VBoxContainer" parent="LoginForm"]
+margin_top = 74.0
+margin_right = 220.0
+margin_bottom = 162.0
+size_flags_vertical = 0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EmailLabel" type="Label" parent="LoginForm/InputBox"]
+margin_right = 220.0
+margin_bottom = 14.0
+text = "Email"
+
+[node name="EmailInput" type="LineEdit" parent="LoginForm/InputBox"]
+margin_top = 18.0
+margin_right = 220.0
+margin_bottom = 42.0
+
+[node name="PasswordLabel" type="Label" parent="LoginForm/InputBox"]
+margin_top = 46.0
+margin_right = 220.0
+margin_bottom = 60.0
+text = "Password"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PasswordInput" type="LineEdit" parent="LoginForm/InputBox"]
+margin_top = 64.0
+margin_right = 220.0
+margin_bottom = 88.0
+secret = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InfoLabel" type="Label" parent="LoginForm"]
+margin_top = 166.0
+margin_right = 220.0
+margin_bottom = 180.0
+autowrap = true
+
+[node name="ButtonBox" type="VBoxContainer" parent="LoginForm"]
+margin_top = 201.0
+margin_right = 220.0
+margin_bottom = 273.0
+size_flags_vertical = 10
+alignment = 2
+
+[node name="CheckBox" type="CheckBox" parent="LoginForm/ButtonBox"]
+margin_right = 220.0
+margin_bottom = 24.0
+focus_mode = 0
+enabled_focus_mode = 0
+text = "Remember email"
+
+[node name="LoginButton" type="Button" parent="LoginForm/ButtonBox"]
+margin_top = 28.0
+margin_right = 220.0
+margin_bottom = 48.0
+rect_pivot_offset = Vector2( -502.628, -13.1575 )
+text = "Login"
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="CreateAccountButton" type="Button" parent="LoginForm/ButtonBox"]
+margin_top = 52.0
+margin_right = 220.0
+margin_bottom = 72.0
+rect_pivot_offset = Vector2( -502.628, -13.1575 )
+text = "Create Account"
+
+[node name="CreateAccountForm" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 15.0
+margin_top = 15.0
+margin_right = -15.0
+margin_bottom = -15.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Header" type="Label" parent="CreateAccountForm"]
+margin_right = 220.0
+margin_bottom = 70.0
+rect_min_size = Vector2( 0, 70 )
+size_flags_vertical = 3
+text = "Create Account"
+align = 1
+valign = 1
+
+[node name="InputBox" type="VBoxContainer" parent="CreateAccountForm"]
+margin_top = 74.0
+margin_right = 220.0
+margin_bottom = 208.0
+size_flags_vertical = 3
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EmailLabel" type="Label" parent="CreateAccountForm/InputBox"]
+margin_right = 220.0
+margin_bottom = 14.0
+text = "Email"
+
+[node name="EmailInput" type="LineEdit" parent="CreateAccountForm/InputBox"]
+margin_top = 18.0
+margin_right = 220.0
+margin_bottom = 42.0
+
+[node name="PasswordLabel" type="Label" parent="CreateAccountForm/InputBox"]
+margin_top = 46.0
+margin_right = 220.0
+margin_bottom = 60.0
+text = "Password"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PasswordInput" type="LineEdit" parent="CreateAccountForm/InputBox"]
+margin_top = 64.0
+margin_right = 220.0
+margin_bottom = 88.0
+secret = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ConfirmPasswordLabel" type="Label" parent="CreateAccountForm/InputBox"]
+margin_top = 92.0
+margin_right = 220.0
+margin_bottom = 106.0
+text = "Confirm Password"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ConfirmPasswordInput" type="LineEdit" parent="CreateAccountForm/InputBox"]
+margin_top = 110.0
+margin_right = 220.0
+margin_bottom = 134.0
+secret = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InfoLabel" type="Label" parent="CreateAccountForm"]
+margin_top = 212.0
+margin_right = 220.0
+margin_bottom = 226.0
+autowrap = true
+
+[node name="ButtonBox" type="HBoxContainer" parent="CreateAccountForm"]
+margin_top = 250.0
+margin_right = 220.0
+margin_bottom = 270.0
+size_flags_horizontal = 9
+size_flags_vertical = 10
+
+[node name="GoBackButton" type="Button" parent="CreateAccountForm/ButtonBox"]
+margin_right = 25.0
+margin_bottom = 20.0
+rect_pivot_offset = Vector2( -502.628, -13.1575 )
+focus_mode = 0
+enabled_focus_mode = 0
+text = "<-"
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="CreateAccountButton" type="Button" parent="CreateAccountForm/ButtonBox"]
+margin_left = 29.0
+margin_right = 220.0
+margin_bottom = 20.0
+rect_pivot_offset = Vector2( -502.628, -13.1575 )
+focus_mode = 0
+size_flags_horizontal = 3
+enabled_focus_mode = 0
+text = "Create Account"
