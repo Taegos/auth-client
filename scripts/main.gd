@@ -11,15 +11,25 @@ func _center_window():
 	var screen_size = OS.get_screen_size(0)
 	var window_size = OS.get_window_size()
 	OS.set_window_position(screen_size*0.5 - window_size*0.5)
+	_enter_game("")
+
 
 func _enter_game(token: String):
 	OS.alert(
 		'The authentication was successful.\n' +
-		'Token: ' + token + '\n' +
+		'Token: ' + str(token) + '\n' +
 		'Now this window should exit and the main game client should start '  +
 		'with the received token (Not implemented).',
 		'(Placeholder)')
-	get_tree().quit()
+
+	#get_tree().change_scene("res://scenes/game.tscn")
+	
+	
+	print("asd")
+	#$GS.start_verification(token)
+
+#remote func get_token():
+#	rpc_id(1, "sync_token", _token)
 
 func _create_login_form():
 	add_child(LoginForm.instance())

@@ -1,0 +1,5 @@
+[gd_scene format=2]
+
+[node name="GS" type="Node"]
+
+[node name="Verification" type="Node" parent="."]

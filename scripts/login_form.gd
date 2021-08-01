@@ -19,11 +19,16 @@ func _submit():
 	$InfoLabel.text = ''
 	var email: String = $InputBox/EmailInput.text
 	var password: String = $InputBox/PasswordInput.text
-	var account: Dictionary = {
-		"email": email,
-		"password": password
-	}
-	emit_signal("on_submit", account)
+	if email == "":
+		display_error("Email cannot be left blank")
+	elif password == "":
+		display_error("Password cannot be left blank")
+	else:
+		var account: Dictionary = {
+			"email": email,
+			"password": password
+		}
+		emit_signal("on_submit", account)
 
 func display_error(text: String):
 	ControlExt.enable_children(self, true)

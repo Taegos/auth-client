@@ -36,6 +36,8 @@ func _submit():
 		display_error("Password has to have a length of atleast 8 characters")
 	elif password != confirm_password:
 		display_error("Passwords does not match")
+	elif email == "":
+		display_error("Email cannot be left blank")
 	else:
 		var account: Dictionary = {
 			"email": email,
